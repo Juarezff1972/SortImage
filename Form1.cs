@@ -36,19 +36,14 @@ namespace SortImage
         private ArrayItem[]? vetor;
         private ArrayItem[]? vetorimg;
 
-        private Image img;
-        private Bitmap bmp;
-        private Graphics graph;
+        private Bitmap? bmp;
         private float ratio;
 
-        private int cnt;
-        private bool iniciou = false;
 
         public Form1()
         {
             InitializeComponent();
             ratio = 1;
-            cnt = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -100,8 +95,6 @@ namespace SortImage
             int j;
             uint x;
             uint y;
-
-            iniciou = false;
 
             m_array = Enumerable.Range(1, nums).ToArray();
             Random rnd = new();
@@ -205,8 +198,6 @@ namespace SortImage
         {
             string? x;
             Algoritmos algo;
-
-            iniciou = true;
 
             x = comboBox1.SelectedItem.ToString();
             PopularEventHandler d1 = new PopularEventHandler(OnPopular);
@@ -351,7 +342,6 @@ namespace SortImage
             int i;
             int x;
             int y;
-            bool mudar = false;
             if (vetor != null)
             {
                 x = 0;
